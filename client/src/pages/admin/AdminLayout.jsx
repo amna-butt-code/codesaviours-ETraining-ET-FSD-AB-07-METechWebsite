@@ -1,7 +1,10 @@
 import { Navigate, NavLink, Outlet, useNavigate } from 'react-router-dom';
 
-const links = [{ to: '/admin', label: 'Dashboard', end: true }];
-
+const links = [
+  { to: '/admin', label: 'Dashboard', end: true },
+  { to: '/admin/leads', label: 'Leads' },
+  { to: '/admin/enrollments', label: 'Enrollments' },
+];
 export default function AdminLayout() {
   const navigate = useNavigate();
 

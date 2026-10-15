@@ -20,6 +20,8 @@ import NotFound from './pages/NotFound.jsx';
 import AdminLogin from './pages/admin/AdminLogin.jsx';
 import AdminLayout from './pages/admin/AdminLayout.jsx';
 import Dashboard from './pages/admin/Dashboard.jsx';
+import Leads from './pages/admin/Leads.jsx';
+import Enrollments from './pages/admin/Enrollments.jsx';
 
 function PublicLayout() {
   return (
@@ -74,6 +76,8 @@ export default function App() {
 
       <Route path="/admin/login" element={<AdminLogin />} />
       <Route path="/admin" element={<AdminLayout />}>
+      <Route path="leads" element={<Leads />} />
+<Route path="enrollments" element={<Enrollments />} />
         <Route index element={<Dashboard />} />
       </Route>
     </Routes>

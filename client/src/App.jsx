@@ -16,6 +16,7 @@ import BlogPost from './pages/BlogPost.jsx';
 import Contact from './pages/Contact.jsx';
 import Quote from './pages/Quote.jsx';
 import NotFound from './pages/NotFound.jsx';
+import Legal from './pages/Legal.jsx';
 
 export default function App() {
   return (
@@ -36,6 +37,24 @@ export default function App() {
           <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/quote" element={<Quote />} />
+          <Route
+  path="/privacy"
+  element={
+    <Legal title="Privacy Policy">
+      <p>We collect the details you submit in our forms, such as name, phone, email and message, only to respond to your request.</p>
+      <p>We do not sell your information. You can ask us to delete your details at any time through the contact page.</p>
+    </Legal>
+  }
+/>
+<Route
+  path="/terms"
+  element={
+    <Legal title="Terms">
+      <p>The information on this website is for general guidance. Quotes and designs are confirmed only in writing after a site survey.</p>
+      <p>Training fees, dates and seats can change. Enrollment is confirmed by our team.</p>
+    </Legal>
+  }
+/>
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>

@@ -10,7 +10,8 @@ import Quote from './pages/Quote.jsx';
 import NotFound from './pages/NotFound.jsx';
 import About from './pages/About.jsx';
 import EVCharging from './pages/EVCharging.jsx';
-
+import Training from './pages/Training.jsx';
+import TrainingDetail from './pages/TrainingDetail.jsx';
 export default function App() {
   return (
     <div className="flex min-h-screen flex-col">
@@ -20,6 +21,8 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/services" element={<Services />} />
           <Route path="/services/:slug" element={<ServiceDetail />} />
+          <Route path="/training" element={<Training />} />
+<Route path="/training/:slug" element={<TrainingDetail />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/quote" element={<Quote />} />
           <Route path="*" element={<NotFound />} />

@@ -4,6 +4,11 @@ const links = [
   { to: '/admin', label: 'Dashboard', end: true },
   { to: '/admin/leads', label: 'Leads' },
   { to: '/admin/enrollments', label: 'Enrollments' },
+  { to: '/admin/services', label: 'Services' },
+  { to: '/admin/courses', label: 'Courses' },
+  { to: '/admin/batches', label: 'Batches' },
+  { to: '/admin/projects', label: 'Projects' },
+  { to: '/admin/posts', label: 'Blog posts' },
 ];
 export default function AdminLayout() {
   const navigate = useNavigate();

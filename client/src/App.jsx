@@ -22,7 +22,7 @@ import AdminLayout from './pages/admin/AdminLayout.jsx';
 import Dashboard from './pages/admin/Dashboard.jsx';
 import Leads from './pages/admin/Leads.jsx';
 import Enrollments from './pages/admin/Enrollments.jsx';
-
+import { AdminServices, AdminCourses, AdminBatches, AdminProjects, AdminPosts } from './pages/admin/ResourcePages.jsx';
 function PublicLayout() {
   return (
     <div className="flex min-h-screen flex-col">
@@ -80,6 +80,11 @@ export default function App() {
 <Route path="enrollments" element={<Enrollments />} />
         <Route index element={<Dashboard />} />
       </Route>
+      <Route path="services" element={<AdminServices />} />
+<Route path="courses" element={<AdminCourses />} />
+<Route path="batches" element={<AdminBatches />} />
+<Route path="projects" element={<AdminProjects />} />
+<Route path="posts" element={<AdminPosts />} />
     </Routes>
   );
 }

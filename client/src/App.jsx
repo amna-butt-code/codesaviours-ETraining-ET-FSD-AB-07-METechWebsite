@@ -8,6 +8,8 @@ import ServiceDetail from './pages/ServiceDetail.jsx';
 import Contact from './pages/Contact.jsx';
 import Quote from './pages/Quote.jsx';
 import NotFound from './pages/NotFound.jsx';
+import About from './pages/About.jsx';
+import EVCharging from './pages/EVCharging.jsx';
 
 export default function App() {
   return (
@@ -21,6 +23,8 @@ export default function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/quote" element={<Quote />} />
           <Route path="*" element={<NotFound />} />
+          <Route path="/about" element={<About />} />
+<Route path="/ev-charging" element={<EVCharging />} />
         </Routes>
       </main>
       <Footer />

@@ -4,6 +4,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import authRoutes from './routes/auth.js';
 import leadRoutes from './routes/leads.js';
+import statsRoutes from './routes/stats.js';
 import enrollmentRoutes from './routes/enrollments.js';
 import { crudRouter } from './utils/crud.js';
 import Service from './models/Service.js';
@@ -22,6 +23,7 @@ app.get('/api/health', (req, res) => res.json({ status: 'ok' }));
 
 app.use('/api/auth', authRoutes);
 app.use('/api/leads', leadRoutes);
+app.use('/api/stats', statsRoutes);
 app.use('/api/enrollments', enrollmentRoutes);
 app.use('/api/services', crudRouter(Service, { sort: 'order' }));
 app.use('/api/courses', crudRouter(Course));

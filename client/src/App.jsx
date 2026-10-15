@@ -2,10 +2,7 @@ import { Routes, Route } from 'react-router-dom';
 import Header from './components/Header.jsx';
 import Footer from './components/Footer.jsx';
 import WhatsAppButton from './components/WhatsAppButton.jsx';
-
-function Home() {
-  return <h1 className="p-10 text-4xl font-bold">Home page coming soon</h1>;
-}
+import Home from './pages/Home.jsx';
 
 export default function App() {
   return (

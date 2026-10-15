@@ -5,6 +5,9 @@ import WhatsAppButton from './components/WhatsAppButton.jsx';
 import Home from './pages/Home.jsx';
 import Services from './pages/Services.jsx';
 import ServiceDetail from './pages/ServiceDetail.jsx';
+import Contact from './pages/Contact.jsx';
+import Quote from './pages/Quote.jsx';
+import NotFound from './pages/NotFound.jsx';
 
 export default function App() {
   return (
@@ -15,6 +18,9 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/services" element={<Services />} />
           <Route path="/services/:slug" element={<ServiceDetail />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/quote" element={<Quote />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
       <Footer />

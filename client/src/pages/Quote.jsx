@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import LeadForm from '../components/LeadForm.jsx';
+import SmartQuote from '../modules/smartQuote/SmartQuote.jsx';
 
 export default function Quote() {
   useEffect(() => {
@@ -9,10 +9,10 @@ export default function Quote() {
   return (
     <section className="py-16">
       <div className="mx-auto max-w-3xl px-4">
-        <h1 className="text-4xl font-bold">Get a Free Quote</h1>
-        <p className="mt-3">Share a few details and our team will prepare a quote for you.</p>
+        <h1 className="text-4xl font-bold">Get a Free Solar Quote</h1>
+        <p className="mt-3">Answer a few questions and get a rough solar estimate instantly.</p>
         <div className="mt-8">
-          <LeadForm source="quote" title="Quote request" />
+          <SmartQuote />
         </div>
       </div>
     </section>

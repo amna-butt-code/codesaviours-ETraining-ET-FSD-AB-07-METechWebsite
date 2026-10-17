@@ -30,8 +30,8 @@ export default function Header() {
       </div>
 
       <div className="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
-        <Link to="/" className="text-2xl font-bold text-[var(--color-primary)]" style={{ fontFamily: 'Poppins' }}>
-          ME Technologies
+        <Link to="/">
+          <img src="/logo.png" alt="ME Technologies" className="h-14 w-auto rounded bg-black" />
         </Link>
 
         <nav className="hidden lg:flex items-center gap-6">

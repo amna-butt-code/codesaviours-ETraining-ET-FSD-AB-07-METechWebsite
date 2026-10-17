@@ -23,7 +23,7 @@ export default function Footer() {
     <footer className="bg-[var(--color-dark)] text-gray-300">
       <div className="mx-auto max-w-6xl px-4 py-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
         <div>
-          <h3 className="text-xl font-bold text-white">ME Technologies</h3>
+          <img src="/logo.png" alt="ME Technologies" className="h-16 w-auto rounded" />
           <p className="mt-3 text-sm">
             Engineering consultancy and training company. Smart Engineering Today. Sustainable Tomorrow.
           </p>

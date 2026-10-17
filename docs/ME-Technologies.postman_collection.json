@@ -1,0 +1,111 @@
+{
+  "info": {
+    "name": "ME Technologies API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "baseUrl", "value": "http://localhost:5000/api" },
+    { "key": "token", "value": "" }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [{ "key": "token", "value": "{{token}}", "type": "string" }]
+  },
+  "item": [
+    {
+      "name": "Health check",
+      "request": { "method": "GET", "url": "{{baseUrl}}/health" }
+    },
+    {
+      "name": "1. Admin login (run first)",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": ["pm.collectionVariables.set('token', pm.response.json().token);"]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "auth": { "type": "noauth" },
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "url": "{{baseUrl}}/auth/login",
+        "body": {
+          "mode": "raw",
+          "raw": "{\"email\":\"admin@metech.com\",\"password\":\"Admin@12345\"}"
+        }
+      }
+    },
+    {
+      "name": "List services",
+      "request": { "method": "GET", "url": "{{baseUrl}}/services" }
+    },
+    {
+      "name": "Get service by slug",
+      "request": { "method": "GET", "url": "{{baseUrl}}/services/solar-pv" }
+    },
+    {
+      "name": "List courses",
+      "request": { "method": "GET", "url": "{{baseUrl}}/courses" }
+    },
+    {
+      "name": "List batches",
+      "request": { "method": "GET", "url": "{{baseUrl}}/batches" }
+    },
+    {
+      "name": "List projects",
+      "request": { "method": "GET", "url": "{{baseUrl}}/projects" }
+    },
+    {
+      "name": "List posts",
+      "request": { "method": "GET", "url": "{{baseUrl}}/posts" }
+    },
+    {
+      "name": "Submit lead (public)",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "url": "{{baseUrl}}/leads",
+        "body": {
+          "mode": "raw",
+          "raw": "{\"name\":\"Test User\",\"phone\":\"03001234567\",\"city\":\"Faisalabad\",\"service\":\"Solar PV\",\"message\":\"Need a quote\",\"source\":\"quote\"}"
+        }
+      }
+    },
+    {
+      "name": "Submit lead with missing phone (expect 400)",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "url": "{{baseUrl}}/leads",
+        "body": { "mode": "raw", "raw": "{\"name\":\"Test User\",\"phone\":\"\"}" }
+      }
+    },
+    {
+      "name": "List leads (admin)",
+      "request": { "method": "GET", "url": "{{baseUrl}}/leads" }
+    },
+    {
+      "name": "List enrollments (admin)",
+      "request": { "method": "GET", "url": "{{baseUrl}}/enrollments" }
+    },
+    {
+      "name": "Dashboard stats (admin)",
+      "request": { "method": "GET", "url": "{{baseUrl}}/stats" }
+    },
+    {
+      "name": "Create service (admin)",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "url": "{{baseUrl}}/services",
+        "body": {
+          "mode": "raw",
+          "raw": "{\"title\":\"Test Service\",\"slug\":\"test-service\",\"shortText\":\"Test\",\"description\":\"Test\",\"order\":99}"
+        }
+      }
+    }
+  ]
+}
